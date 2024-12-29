@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOSHIK</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Снежинки -->
+    <div class="snowflakes" id="snowflakes-container"></div>
+
+    <!-- Прелоадер -->
+    <div id="preloader">
+        <div class="loading-circle"></div>
+    </div>
+    
+    <!-- Заголовок -->
+    <header class="hero">
+        <div class="container">
+            <h2 class="new-year-text">New year update</h2>
+            <h1>ДОШИК place</h1>
+            <p>Тут собираются воспоминания и интересные моменты. (это сгенирировал чат гпт) <br> Тут пиздец (вроде понятно кем это сгенирировано)
+            </p>
+        </div>
+    </header>
+    
+    <div class="gallery">
+        <div class="container">
+            <h2>Галерея</h2>
+            <div class="slider">
+                <div class="slide">
+                    <img src="foto/1.jpg" alt="Фото 1">
+                    <div class="image-overlay">кто там смотрит</div>
+                </div>
+                <div class="slide">
+                    <img src="foto/2.jpg" alt="Фото 2">
+                    <div class="image-overlay">ко мне?</div>
+                </div>
+                <div class="slide">
+                    <img src="foto/3.jpg" alt="Фото 3">
+                    <div class="image-overlay">чо пялиш?</div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <section class="tea-photo">
+        <div class="container">
+            <h2>Чайная пауза</h2>
+            <div class="photo-with-caption">
+                <img src="foto/tea.jpg" alt="Чай">
+                <div class="image-overlay">Лимон без чая как секс без страсти</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Управление музыкой -->
+    <div class="music-control">
+        <audio id="background-music" loop>
+            <source src="mariah-carey-all-i-want-for-christmas_muzrecord.net.mp3" type="audio/mp3">
+        </audio>
+        <button class="music-toggle">🎵 Музыка</button>
+        <div class="volume-container">
+            <label for="volume">Громкость</label>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2">
+        </div>
+        
+        <!-- Кнопка для выбора музыки -->
+        <button class="change-music">мб получше?</button>
+        
+        <!-- Список песен -->
+        <div class="music-options">
+            <button class="song-option" data-src="songs/Toxi_November.mp3">November</button>
+            <button class="song-option" data-src="songs/Toxi-CRANKI.mp3">CRANKI</button>
+            <button class="song-option" data-src="songs/Toxi-DANTE.mp3">DANTE</button>
+        </div>
+    </div>
+
+    <div class="fact-container">
+        <h2>Факты обо мне</h2>
+        <div class="fact" id="fact1" onclick="toggleBlur('fact1')">
+          <span class="blurred-text">Пью чай 5 раз в день</span>
+        </div>
+        <div class="fact" id="fact2" onclick="toggleBlur('fact2')">
+          <span class="blurred-text">
+            Автор обезьяна? 
+            <button class="answer-btn" onclick="toggleAnswer('fact2', 'yes')">Да</button> 
+            / 
+            <button class="answer-btn" onclick="toggleAnswer('fact2', 'no')">Нет</button>
+          </span>
+          <div id="answer-text"></div> <!-- Место для текста, который будет появляться -->
+        </div>
+        <div class="fact" id="fact3" onclick="toggleBlur('fact3')">
+          <span class="blurred-text">Я глупенькая</span>
+        </div>
+      </div>      
+
+    <section class="reveal-section">
+        <div class="reveal-blur"></div> <!-- Слой для размытия -->
+        <div class="reveal-content">
+            <button id="reveal-button" class="reveal-btn">перейти...</button>
+            <div id="reveal-message" class="reveal-message">Будет доступно 31.12.2024</div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2024 Наш уголок. Все права защищены.</p>
+    </footer>
+
+    <script src="java-script.js" defer></script>
+</body>
+</html>
