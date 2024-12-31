@@ -495,16 +495,7 @@ a:hover {
     z-index: 2;
 }
 
-/* Сообщение */
-.reveal-message {
-    display: none;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #FF4500;
-    margin-top: 20px;
-    opacity: 0;
-    animation: fadeInReveal 0.6s ease-out forwards;
-}
+
 
 /* Анимация для текста */
 @keyframes fadeInReveal {

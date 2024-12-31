@@ -96,13 +96,19 @@
         </div>
       </div>      
 
-    <section class="reveal-section">
-        <div class="reveal-blur"></div> <!-- Слой для размытия -->
-        <div class="reveal-content">
-            <button id="reveal-button" class="reveal-btn">перейти...</button>
-            <div id="reveal-message" class="reveal-message">Будет доступно 31.12.2024</div>
-        </div>
-    </section>
+    <div class="reveal-section">
+    <div class="reveal-blur"></div>
+    <div class="reveal-content">
+        <h2>Ожидайте полуночи!</h2>
+        <p>До активации кнопки осталось:</p>
+        <p id="time-remaining" class="reveal-timer">00:00:00</p>
+        <button id="telegram-link" class="reveal-btn dimmed" disabled>
+        Перейти..
+        </button>
+        </p>
+    </div>
+    </div>
+
 
     <!-- Футер -->
     <footer>

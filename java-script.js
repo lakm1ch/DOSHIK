@@ -154,3 +154,35 @@ function toggleBlur(factId) {
     }
   }
   
+  function updateTimer() {
+    const now = new Date();
+    const midnight = new Date();
+    midnight.setHours(23, 0, 0, 0);
+
+    const diff = midnight - now;
+
+    const link = document.getElementById("telegram-link");
+    const message = document.getElementById("reveal-message");
+
+    if (diff <= 0) {
+      // Активация кнопки
+      link.classList.remove("dimmed");
+      link.disabled = false;
+      message.style.display = "block";
+      message.style.opacity = "1";
+      link.onclick = () => {
+        window.open("https://t.me/DOSH11K_bot", "_blank");
+      };
+    } else {
+      // Обновление таймера
+      const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+      const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, "0");
+      const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, "0");
+
+      document.getElementById("time-remaining").innerText = `${hours}:${minutes}:${seconds}`;
+      setTimeout(updateTimer, 1000);
+    }
+  }
+
+  // Запуск таймера
+  updateTimer();
